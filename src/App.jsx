@@ -14,13 +14,12 @@ function ProjectCard({
   url,
   address,
   background,
+  mobile = false,
 }) {
   return (
     <article className="group relative rounded-3xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-white/[0.025] overflow-hidden hover:border-gray-300 dark:hover:border-gray-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/20 transition-all duration-500">
       <div className="grid lg:grid-cols-[1fr_380px] gap-0">
-        {/* =========================
-            INFO
-        ========================== */}
+        {/* INFO */}
         <div className="p-7 sm:p-9 lg:p-10 flex flex-col justify-between min-h-[320px]">
           <div>
             {/* Number + Category */}
@@ -78,9 +77,7 @@ function ProjectCard({
           </div>
         </div>
 
-        {/* =========================
-            SCREENSHOT
-        ========================== */}
+        {/* SCREENSHOT */}
         <div
           className={`relative flex items-center justify-center p-5 sm:p-7 lg:p-8 ${background} overflow-hidden`}
         >
@@ -100,13 +97,19 @@ function ProjectCard({
             </div>
 
             {/* Screenshot */}
-            <div className="relative aspect-[16/10] bg-gray-50 dark:bg-gray-900 overflow-hidden">
-              <img
-                src={image}
-                alt={imageAlt}
-                className="absolute inset-0 w-full h-full object-contain object-top transition-transform duration-700 group-hover:scale-[1.025]"
-              />
-            </div>
+            <div
+            className={`relative ${
+              mobile ? "aspect-[9/16]" : "aspect-[16/10]"
+            } bg-gray-50 dark:bg-gray-900 overflow-hidden flex items-start justify-center`}
+          >
+            <img
+              src={image}
+              alt={imageAlt}
+              className={`${
+                mobile ? "h-full w-auto object-contain" : "absolute inset-0 w-full h-full object-contain object-top"
+              } transition-transform duration-700 group-hover:scale-[1.025]`}
+            />
+          </div>
 
             {/* Bottom Highlight */}
             <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
@@ -256,6 +259,81 @@ export default function App() {
                 address="senandumatcha.vercel.app"
                 background="bg-[#eee7d4] dark:bg-[#151a17]"
               />
+
+              {/* =========================================
+                  PROJECT 04 — FLOODGUARD AI
+              ========================================== */}
+              <ProjectCard
+                number="04"
+                category="WebGIS Application"
+                categoryColor="text-cyan-600 dark:text-cyan-400"
+                title="FloodGuard AI"
+                description="Platform WebGIS untuk memvisualisasikan titik rawan banjir dan genangan air di Provinsi Riau. Website ini menyajikan data geospasial secara interaktif sehingga informasi lokasi, kondisi, dan persebaran titik banjir dapat dipantau dengan lebih mudah."
+                tags={[
+                  "React",
+                  "WebGIS",
+                  "GeoJSON",
+                  "Geospatial",
+                  "Data Visualization",
+                  "Responsive Design",
+                ]}
+                image="/projects/floodguard.png"
+                imageAlt="FloodGuard AI WebGIS Monitoring Banjir Riau"
+                url="https://flood-guard-ai-chi.vercel.app/"
+                address="flood-guard-ai-chi.vercel.app"
+                background="bg-[#071525] dark:bg-[#071525]"
+              />
+
+              {/* =========================================
+                  PROJECT 05 — MAYAN SEDAP
+              ========================================== */}
+
+              {/* PROJECT 05 */}
+              <ProjectCard
+                number="05"
+                category="Admin Dashboard"
+                categoryColor="text-emerald-600 dark:text-emerald-400"
+                title="Mayan Sedap"
+                description="Modern admin dashboard untuk membantu pengelolaan operasional Mayan Sedap. Dashboard ini menyediakan tampilan informasi order, delivery, customer, revenue, serta beberapa menu manajemen dengan interface yang clean dan responsive."
+                tags={[
+                  "React",
+                  "JavaScript",
+                  "Tailwind CSS",
+                  "Admin Dashboard",
+                  "Responsive Design",
+                  "UI/UX",
+                ]}
+                image="/projects/mayansedap.png"
+                imageAlt="Mayan Sedap Admin Dashboard"
+                url="https://mayansedap.vercel.app/"
+                address="mayansedap.vercel.app"
+                background="bg-[#f3f4f6] dark:bg-[#151a17]"
+              />
+
+           {/* =========================================
+                PROJECT 06 — HARVEST GROCERY
+            ========================================== */}
+            <ProjectCard
+              number="06"
+              category="Mobile Application"
+              categoryColor="text-emerald-400 dark:text-emerald-200"
+              title="Harvest Grocery"
+              description="Desain mobile application untuk manajemen penjualan beras yang dirancang untuk membantu pengguna mengelola produk, penjualan, dan informasi transaksi melalui interface yang sederhana, modern, dan mudah digunakan. Prototype interaktif dibuat di Figma sehingga alur aplikasi dapat langsung dieksplorasi."
+              tags={[
+                "Figma",
+                "UI/UX Design",
+                "Mobile App",
+                "Interactive Prototype",
+                "User Flow",
+                "Prototyping",
+              ]}
+              image="/projects/harvestgrocery.png"
+              imageAlt="Harvest Grocery Mobile Application"
+              url="https://www.figma.com/proto/3QAA0KeQz4vpuWZLrEuydk/RPL-KELOMPOK?node-id=1-9413&starting-point-node-id=1%3A9413"
+              address="figma.com/proto/harvest-grocery"
+              background="bg-[#eaf7ed] dark:bg-[#0b1a10]"
+              mobile
+            />
             </div>
 
             {/* =========================
@@ -264,7 +342,7 @@ export default function App() {
             <div className="mt-5 rounded-3xl border border-dashed border-gray-300 dark:border-gray-800 p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-5">
               <div>
                 <p className="text-sm font-mono text-gray-400 dark:text-gray-600">
-                  04+
+                  07+
                 </p>
 
                 <h3 className="mt-2 text-lg font-semibold text-gray-900 dark:text-white">
