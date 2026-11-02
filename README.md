@@ -24,11 +24,10 @@
 
 ---
 
-## <img src="assets/icon.png" width="50" align="center"> About me
+## 🧑‍💻 About me
 
 ![status](https://img.shields.io/badge/status-active-brightgreen) ![license](https://img.shields.io/badge/license-MIT-blue)
 
-<img align="right" width="320" src="assets/illustration.png" />
 
 - 🎓 Mahasiswa Teknik Informatika | **Politeknik Caltex Riau**
 - 💻 Passionate about Web Development
